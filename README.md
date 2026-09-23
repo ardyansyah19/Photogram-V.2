@@ -1,2 +1,2 @@
-# Photogram-V.2
+# Photogram V.2
 By ahmad Riko Dyansyah
