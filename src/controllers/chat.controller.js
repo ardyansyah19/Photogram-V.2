@@ -82,6 +82,18 @@ const chatController = {
         content: content.trim(),
       });
 
+      const message = await Message.create({
+        conversationId: req.params.id,
+        senderId: req.user.id,
+        content: content.trim(),
+      });
+
+      const message = await Message.create({
+        conversationId: req.params.id,
+        senderId: req.user.id,
+        content: content.trim(),
+      });
+
       req.app.get('io')?.to(`conversation:${req.params.id}`).emit('message:new', message);
 
       return res.status(201).json({ success: true, data: message });
