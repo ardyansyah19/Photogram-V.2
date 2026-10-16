@@ -49,6 +49,14 @@ const authController = {
       const user = await User.create({ username, email, passwordHash, fullName });
       const token = generateToken(user);
 
+      const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
+      const user = await User.create({ username, email, passwordHash, fullName });
+      const token = generateToken(user);
+
+      const passwordHash = await bcrypt.hash(password, SALT_ROUNDS);
+      const user = await User.create({ username, email, passwordHash, fullName });
+      const token = generateToken(user);
+
       return res.status(201).json({
         success: true,
         message: 'Registrasi berhasil.',
